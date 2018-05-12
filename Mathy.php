@@ -93,6 +93,92 @@ class Mathy{
 		}while($pos!==false);
 		return "done";
 	}
+
+	// Algebra
+	public function gcd($a,$b){
+		return ($a%$b) ? gcd($b,$a%$b) : $b;
+	}
+
+	public function lcm($a,$b){
+		return $a*$b/gcd($a,$b);
+	}
+
+	public function factor($number){
+		return 1;
+	}
+
+	public function isPrime($number){
+		return 1;
+	}
+
+	public function nextPrime($number,$pos=1){
+		return 1;
+	}
+
+	// quadratic equation
+
+	// polynomial
+
+	// linear varialble
+
+	// complex number
+
+	// permutation combination
+	public function factorial($number){
+		$factorial=1;
+		for($i=1;$i<=$number;$i++){
+			$factorial*=$i;
+		}
+		return $factorial;
+	}
+
+	public function ncr($n,$r){
+		return factorial($n)/(factorial($r)*factorial($n-$r));
+	}
+
+	public function npr($n,$r){
+		return factorial($n)/factorial($n-$r);
+	}
+
+	// vector
+
+	// series
+
+	// stright line
+
+	// mensuration
+
+	// statistic
+	public function sum($arr){
+		$sum=0;
+		for($i=0;$i<sizeof($arr);$i++){
+			$sum+=$arr[$i];
+		}
+		return $sum;
+	}
+
+	public function mid($a,$b){
+		return ($a+$b)/2;
+	}
+
+	public function mean($arr){
+		return $this->sum($arr)/sizeof($arr);
+	}
+
+	public function median($arr){
+		sort($arr);
+		$l=sizeof($arr);
+		if($l%2==0){
+			//even size
+			return $this->mid($arr[$l/2-1],$arr[$l/2]);
+		}else{
+			return $arr[$l/2];
+		}
+	}
+
+	public function mode($arr){
+		return 1;
+	}
 }
 
 ?>
